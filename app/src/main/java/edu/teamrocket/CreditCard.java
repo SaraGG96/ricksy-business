@@ -1,6 +1,6 @@
 package edu.teamrocket;
 
-public class CreditCard implements GuestDispatcher {
+public class CreditCard {
 
     private String owner;
     private String number;
@@ -40,15 +40,6 @@ public class CreditCard implements GuestDispatcher {
         this.credit = credit;
     }
 
-
-
-    @Override
-    public void dispatch(CreditCard card) {
-    }
-
-    @Override
-    public void registra(GuestDispatcher dispatcher) {
-    }
 
     @Override
     public String toString() {
