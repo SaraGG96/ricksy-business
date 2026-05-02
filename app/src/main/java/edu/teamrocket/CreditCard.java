@@ -11,5 +11,13 @@ public class CreditCard {
         this.owner = owner;
         this.number = number;
     }
-    
+
+    public int getCredit() {
+        return credit;
+    }
+
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
+
 }
