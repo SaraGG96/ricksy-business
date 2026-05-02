@@ -5,28 +5,39 @@ import java.util.Map;
 
 public class UfosPark implements GuestDispatcher {
     
-    private int fee = 500;
+    private double fee = 500.0;
     private final Map<String, String> flota = new HashMap<String, String>();
 
-    public UfosPark() {}
+    public UfosPark() {
+        
+    }
 
-    public void add(String ufoID) {}
+    public void add(String ovni) {
+        flota.put(ovni, null);
+    }
 
-    @Override
     public void dispatch(CreditCard card) {
-        if (card.credit() >= fee) {
-            card.setCredit(card.credit() - fee);
-            flota.put(card.number(), "UFO-" + (flota.size() + 1));
+            if (!flota.containsValue(card.number())) {
+                for (Map.Entry<String, String> entry : flota.entrySet()) {
+                    if (entry.getValue() == null) {
+                        if (card.pay(fee)) {
+                            flota.put(entry.getKey(), card.number());
+                            break;
+                        }
+                    }
+                }
+            }
         }
-    }
 
-    @Override
-    public void registra(GuestDispatcher dispatcher) {
-    }
-
-
-    public String getUfoOf(String cardNumber) {
-        return flota.get(cardNumber);
+    public String getUfoId(String cardNumber) {
+        String ufoId = "0";
+        for (Map.Entry<String, String> entry : flota.entrySet()) {
+            if (cardNumber.equals(entry.getValue()) ) {
+                ufoId = entry.getKey();
+                break;
+            }
+        }
+        return ufoId;
     }
 
     @Override
