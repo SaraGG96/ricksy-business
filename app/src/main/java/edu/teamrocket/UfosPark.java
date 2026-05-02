@@ -29,7 +29,7 @@ public class UfosPark implements GuestDispatcher {
             }
         }
 
-    public String getUfoId(String cardNumber) {
+    public String getUfoOf(String cardNumber) {
         String ufoId = "0";
         for (Map.Entry<String, String> entry : flota.entrySet()) {
             if (cardNumber.equals(entry.getValue()) ) {
