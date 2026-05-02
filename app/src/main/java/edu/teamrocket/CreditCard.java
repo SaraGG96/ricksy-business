@@ -12,12 +12,16 @@ public class CreditCard {
         this.number = number;
     }
 
-    public int getCredit() {
+    public int credit() {
         return credit;
     }
 
     public void setCredit(int credit) {
         this.credit = credit;
+    }
+
+    public String number() {
+        return number;
     }
 
 }
