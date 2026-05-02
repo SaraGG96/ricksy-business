@@ -10,6 +10,10 @@ public class CrystalExpender implements GuestDispatcher {
         this.itemCost = itemCost;
     }
 
+    public int stock() {
+        return stock;
+    }
+
     @Override
     public void dispatch(CreditCard card) {
         if (stock > 0 && card.credit() >= itemCost) {
@@ -17,4 +21,14 @@ public class CrystalExpender implements GuestDispatcher {
             stock--;
         }
     }
+
+    @Override
+    public void registra(GuestDispatcher dispatcher) {
+    }
+
+    @Override
+    public String toString() {
+        return stock + " packs, cada uno cuesta " + itemCost;
+    }
+
 }

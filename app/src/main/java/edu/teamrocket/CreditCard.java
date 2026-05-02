@@ -5,7 +5,6 @@ public class CreditCard implements GuestDispatcher {
     private String owner;
     private String number;
     private int credit = 3000;
-    private static String SYMBOL;
 
     public CreditCard(String owner, String number) {
         this.owner = owner;
@@ -33,5 +32,14 @@ public class CreditCard implements GuestDispatcher {
     @Override
     public void dispatch(CreditCard card) {
     }
-    
+
+    @Override
+    public void registra(GuestDispatcher dispatcher) {
+    }
+
+    @Override
+    public String toString() {
+        return owner + " - " + number + " - " + credit;
+    }
+
 }
