@@ -1,6 +1,6 @@
 package edu.teamrocket;
 
-public class CreditCard {
+public class CreditCard implements GuestDispatcher {
 
     private String owner;
     private String number;
@@ -30,4 +30,8 @@ public class CreditCard {
         return number;
     }
 
+    @Override
+    public void dispatch(CreditCard card) {
+    }
+    
 }
