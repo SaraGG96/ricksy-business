@@ -1,9 +1,12 @@
 package edu.teamrocket;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class UfosPark {
     
     private int fee = 500;
-    private String[] ufosID = new String[10];
+    private final Map<String, String> flota = new HashMap<String, String>();
 
     public void add(String ufoID) {}
 
@@ -14,7 +17,7 @@ public class UfosPark {
     }
 
     public String getUfoOf(String cardNumber) {
-        return "unx";
+        return flota.get(cardNumber);
     }
 
 
