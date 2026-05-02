@@ -1,10 +1,20 @@
 package edu.teamrocket;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Receptivo implements GuestDispatcher {
 
-    public Receptivo() {}
+    private List<GuestDispatcher> dispatchers = new ArrayList<GuestDispatcher>();
 
-    public void registra(GuestDispatcher dispatcher) {}
-    public void dispatch(CreditCard card) {}
+    public void registra(GuestDispatcher service) {
+        dispatchers.add(service);
+    }
+
+    public void dispatch(CreditCard card) {
+        for (GuestDispatcher service : dispatchers) {
+            service.dispatch(card);
+        }
+    }
     
 }
