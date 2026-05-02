@@ -12,6 +12,12 @@ public class CreditCard {
         this.number = number;
     }
 
+    public void pay(int amount) {
+        if (credit >= amount) {
+            credit -= amount;
+        }
+    }
+
     public int credit() {
         return credit;
     }

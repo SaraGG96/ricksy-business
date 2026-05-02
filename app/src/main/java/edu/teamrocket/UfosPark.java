@@ -1,9 +1,9 @@
 package edu.teamrocket;
-import edu.teamrocket.CreditCard;
 
 public class UfosPark {
-
+    
     private int fee = 500;
+    private String[] ufosID = new String[10];
 
     public void add(String ufoID) {}
 
@@ -16,6 +16,8 @@ public class UfosPark {
     public String getUfoOf(String cardNumber) {
         return "unx";
     }
+
+
 
 
 
