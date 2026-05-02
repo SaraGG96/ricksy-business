@@ -4,30 +4,43 @@ public class CreditCard implements GuestDispatcher {
 
     private String owner;
     private String number;
-    private int credit = 3000;
+    private double credit;
+    private final String SYMBOL = "EZIS";
+
 
     public CreditCard(String owner, String number) {
         this.owner = owner;
         this.number = number;
+        this.credit = 3000.0;
     }
 
-    public void pay(int amount) {
+    public boolean pay(double amount) {
         if (credit >= amount) {
-            credit -= amount;
+            this.credit = this.credit - amount;
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
-    public int credit() {
+    public double credit() {
         return credit;
+    }
+
+    public String number() {
+        return number;
+    }
+
+    public String owner() {
+        return owner;
     }
 
     public void setCredit(int credit) {
         this.credit = credit;
     }
 
-    public String number() {
-        return number;
-    }
+
 
     @Override
     public void dispatch(CreditCard card) {
@@ -39,7 +52,7 @@ public class CreditCard implements GuestDispatcher {
 
     @Override
     public String toString() {
-        return owner + " - " + number + " - " + credit;
+        return owner + " - " + number + " - " + credit + SYMBOL;
     }
 
 }
