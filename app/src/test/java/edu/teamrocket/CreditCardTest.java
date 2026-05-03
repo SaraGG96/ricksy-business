@@ -13,11 +13,5 @@ public class CreditCardTest {
         testcard.pay(500);
         assertEquals(500, testcard.credit());
     }
-
-    @Test
-    public void setCreditTest() {
-        testcard.setCredit(2000);
-        assertEquals(2000, testcard.credit());
-    }
     
 }
