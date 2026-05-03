@@ -8,6 +8,8 @@ public class CreditCardTest {
 
     @Test
     public void payTest() {
+        testcard.setCredit(1000);
+        assertEquals(1000, testcard.credit());
         testcard.pay(500);
         assertEquals(500, testcard.credit());
     }
