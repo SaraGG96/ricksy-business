@@ -1,6 +1,6 @@
 package edu.teamrocket;
 
-public class CreditCard {
+public class CreditCard implements PaymentMethod {
 
     private String owner;
     private String number;
@@ -14,6 +14,7 @@ public class CreditCard {
         this.credit = 3000.0;
     }
 
+    @Override
     public boolean pay(double amount) {
         if (credit >= amount) {
             this.credit = this.credit - amount;
@@ -28,10 +29,12 @@ public class CreditCard {
         return credit;
     }
 
+    @Override
     public String number() {
         return number;
     }
 
+    @Override
     public String owner() {
         return owner;
     }

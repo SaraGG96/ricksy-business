@@ -20,7 +20,7 @@ public class UfosParkTest {
 
     @Test
     public void dispatchTest() {
-        CreditCard card1 = new CreditCard("Ricky", "1234567890123456");
+        PaymentMethod card1 = new CreditCard("Ricky", "1234567890123456");
         parktest.add("ovni1");
         parktest.dispatch(card1);
         assertEquals("ovni1", parktest.getUfoOf("1234567890123456"));

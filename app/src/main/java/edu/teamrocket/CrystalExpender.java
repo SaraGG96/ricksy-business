@@ -14,7 +14,7 @@ public class CrystalExpender implements GuestDispatcher {
         return stock;
     }
 
-    public void dispatch(CreditCard tarjeta) {
+    public void dispatch(PaymentMethod tarjeta) {
         if (this.stock > 0 && tarjeta.pay(this.itemCost)) {
             this.stock--;
         }

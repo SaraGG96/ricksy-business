@@ -16,7 +16,7 @@ public class UfosPark implements GuestDispatcher {
         flota.put(ovni, null);
     }
 
-    public void dispatch(CreditCard card) {
+    public void dispatch(PaymentMethod card) {
             if (!flota.containsValue(card.number())) {
                 for (Map.Entry<String, String> entry : flota.entrySet()) {
                     if (entry.getValue() == null) {

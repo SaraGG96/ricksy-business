@@ -11,7 +11,7 @@ public class Receptivo implements GuestDispatcher {
         dispatchers.add(service);
     }
 
-    public void dispatch(CreditCard card) {
+    public void dispatch(PaymentMethod card) {
         for (GuestDispatcher service : dispatchers) {
             service.dispatch(card);
         }
